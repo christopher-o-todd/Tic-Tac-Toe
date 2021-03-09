@@ -56,7 +56,7 @@ def win_check(board, mark):
     (board[7] == mark and board[5] == mark and board[3] == mark) or # diagonal
     (board[9] == mark and board[5] == mark and board[1] == mark)) # diagonal
 
-
+#Randomly choose the starting player:
 
 def choose_first():
     if random.randint(0, 1) == 0:
@@ -64,13 +64,13 @@ def choose_first():
     else:
         return 'Player 1'
 
-
+#Determine whether a space is available:
 
 def space_check(board, position):
     
     return board[position] == ' '
 
-
+#Check if the board is full:
 
 def full_board_check(board):
     for i in range(1,10):
@@ -79,7 +79,7 @@ def full_board_check(board):
     
     return True
 
-
+#Allow player to select a board space, and validate if outside of range:
 
 def player_choice(board):
     position = 0
@@ -92,13 +92,17 @@ def player_choice(board):
     
     return position
 
-
+#Prompt players if they would like to play again:
 
 def replay():
     
     return input('Do you want to play again? Enter Y or N: ').lower().startswith('y')
 
 
+
+
+
+#Implement the above functions:
 
 print('Welcome to Tic Tac Toe!')
 
